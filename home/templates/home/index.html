@@ -1,0 +1,37 @@
+<h1> MnemoTrain </h1>
+<p>
+	{% if logged_user %}
+		Hello {{ logged_user.name }}, welcome back!
+	{% else %}
+		Hello, and welcome to MnemoTrain! If you have an account, please log in! Otherwise, you can create one, or you can train yourself without recording your performances.
+	{% endif %}
+
+</p>
+
+
+
+
+{% if special_training_list %}
+	<h1>Special training</h1>
+	<ul>
+    {% for training in special_training_list %}
+        <li> {{ training }} </li>
+
+        <!-- <li><a href="{% url training.link %}">{{ training.name }}</a></li> -->
+    {% endfor %}
+    </ul>
+
+{% endif %}
+
+{% if test_yourself_test_list %}
+	<h1>Test Yourself</h1>
+	{% for test in test_yourself_test_list %}
+        <li>{{ test }}</li>
+    {% endfor %}
+
+{% endif %}
+
+
+<!-- 
+<li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+ -->

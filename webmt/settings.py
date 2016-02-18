@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-from settings_secret import *
+
+from settings_secret.settings_secret import * 
+# Contains sensible information
+# See settings_secret_template.py to view all variables that are imported
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rt.apps.RtConfig',
+    'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
